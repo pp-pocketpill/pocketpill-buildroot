@@ -1,0 +1,2 @@
+#! /bin/sh
+gpioset gpiochip0 106=0 # Turn off powersupply enable signal
