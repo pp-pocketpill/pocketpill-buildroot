@@ -6,10 +6,10 @@ run the pocketpill.
 
 ## Features
 
-[x] Boot from SD
-[x] USB-Gadget Serial
-[ ] Keys as input device
-[ ] Display support
+- [x] Boot from SD
+- [x] USB-Gadget Serial
+- [ ] Keys as input device
+- [ ] Display support
 
 ## Building the Image
 
