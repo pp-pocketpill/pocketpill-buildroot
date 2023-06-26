@@ -37,21 +37,65 @@
 
 	gpio_keys {
 		compatible = "gpio-keys";
-		
-		pinctrl-names = "default";
-		pinctrl-0 = <&btn_pins>;
 
+		key_a {
+			label = "GPIO Key A";
+			gpios = <&pio 3 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <30>; /* A */
+			gpio-key;
+		};
+		key_x {
+			label = "GPIO Key X";
+			gpios = <&pio 3 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <45>; /* X */
+			gpio-key;
+		};
+		key_b {
+			label = "GPIO Key B";
+			gpios = <&pio 3 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <48>; /* B */
+			gpio-key;
+		};
+		key_y {
+			label = "GPIO Key Y";
+			gpios = <&pio 3 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <21>; /* Y */
+			gpio-key;
+		};
 		start {
 			label = "GPIO Key Start";
-			linux,code = <28>;
-			gpios = <&pio 3 4 GPIO_ACTIVE_LOW>;
+			gpios = <&pio 3 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <28>; /* ENTER */
 			gpio-key;
 		};
-
 		select {
 			label = "GPIO Key Select";
-			linux,code = <57>;
-			gpios = <&pio 3 5 GPIO_ACTIVE_LOW>;
+			gpios = <&pio 3 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <57>; /* SPACE */
+			gpio-key;
+		};
+		key_right {
+			label = "GPIO Key Right";
+			gpios = <&pio 3 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <106>; /* Right */
+			gpio-key;
+		};
+		key_down {
+			label = "GPIO Key Down";
+			gpios = <&pio 3 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <108>; /* Down */
+			gpio-key;
+		};
+		key_left {
+			label = "GPIO Key Left";
+			gpios = <&pio 3 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <105>; /* Left */
+			gpio-key;
+		};
+		key_up {
+			label = "GPIO Key Up";
+			gpios = <&pio 3 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <103>; /* Up */
 			gpio-key;
 		};
 
@@ -59,14 +103,7 @@
 
 };
 
-&pio {
-	btn_pins: btn_pins {
-		pins = "PD0", "PD1", "PD2", "PD3", "PD4", "PD5", "PD6", "PD7", "PD8", "PD9";
-		function = "gpio_in";
-		bias-pull-up;
-		allwinner,pull = <1>;
-	};
-};
+
 
 &tcon0 {
 	status = "disabled";
