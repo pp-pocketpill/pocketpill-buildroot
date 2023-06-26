@@ -1,0 +1,117 @@
+// SPDX-License-Identifier: (GPL-2.0+ OR X11)
+/*
+ * Copyright 2019 George Hilliard <thirtythreeforty@gmail.com>
+ */
+
+/dts-v1/;
+#include "suniv-f1c100s.dtsi"
+
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+	model = "PocketPill";
+	compatible = "licheepi,licheepi-nano", "allwinner,suniv-f1c100s",
+		     "allwinner,suniv";
+
+	aliases {
+		serial0 = &uart0;
+		spi0 = &spi0;
+	};
+
+	chosen {
+		stdout-path = "serial0:115200n8";
+	};
+
+	reg_vcc3v3: vcc3v3 {
+		compatible = "regulator-fixed";
+		regulator-name = "vcc3v3";
+		regulator-min-microvolt = <3300000>;
+		regulator-max-microvolt = <3300000>;
+	};
+
+	gpio_poweroff {
+		compatible = "gpio-poweroff";
+		gpios = <&pio 3 10 GPIO_ACTIVE_LOW>; /* PD10 */
+		timeout-ms = <3000>;
+	};
+
+	gpio_keys {
+		compatible = "gpio-keys";
+		
+		pinctrl-names = "default";
+		pinctrl-0 = <&btn_pins>;
+
+		start {
+			label = "GPIO Key Start";
+			linux,code = <28>;
+			gpios = <&pio 3 4 GPIO_ACTIVE_LOW>;
+			gpio-key;
+		};
+
+		select {
+			label = "GPIO Key Select";
+			linux,code = <57>;
+			gpios = <&pio 3 5 GPIO_ACTIVE_LOW>;
+			gpio-key;
+		};
+
+	};
+
+};
+
+&pio {
+	btn_pins: btn_pins {
+		pins = "PD0", "PD1", "PD2", "PD3", "PD4", "PD5", "PD6", "PD7", "PD8", "PD9";
+		function = "gpio_in";
+		bias-pull-up;
+		allwinner,pull = <1>;
+	};
+};
+
+&tcon0 {
+	status = "disabled";
+};
+
+&tcon0_out {
+	status = "disabled";
+};
+
+&be0 {
+	status = "disabled";
+};
+
+&de {
+	status = "disabled";
+};
+
+&mmc0 {
+	vmmc-supply = <&reg_vcc3v3>;
+	bus-width = <4>;
+	broken-cd;
+	status = "okay";
+};
+
+&lradc {
+	status = "disabled";
+};
+
+
+&otg_sram {
+	status = "okay";
+};
+
+&uart0 {
+	pinctrl-names = "default";
+	pinctrl-0 = <&uart0_pe_pins>;
+	status = "okay";
+};
+
+&usb_otg {
+	dr_mode = "peripheral";
+	status = "okay";
+};
+
+&usbphy {
+	usb0_id_det-gpio = <&pio 4 2 GPIO_ACTIVE_HIGH>; /* PE2 */
+	status = "okay";
+};

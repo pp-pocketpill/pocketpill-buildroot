@@ -1,0 +1,34 @@
+# use this to iterate on changes to config without rebuilding the entire
+# image from scratch; ensure to clean the right stamps/folders to correctly
+# trigger rebuild with Buildroot
+
+ARG BASE_VERSION=latest
+
+FROM olel/pocketpill-buildroot:$BASE_VERSION AS local
+
+# copy newest version of local files
+WORKDIR /root/pocketpill
+COPY board/ board/
+COPY configs/ configs/
+COPY \
+    Config.in \
+    external.desc \
+    external.mk \
+    ./
+
+# reset Buildroot config and trigger Linux kernel rebuild
+WORKDIR /root/buildroot
+RUN BR2_EXTERNAL=/root/pocketpill make pocketpill_defconfig
+RUN cd output/build/linux-custom/ && rm .stamp_built .stamp_*_installed
+RUN cd output/build/linux-firmware-20221214/ && rm .stamp_built .stamp_*_installed
+
+# rebuild kernel
+#RUN make linux-dirclean
+RUN make linux-rebuild
+
+# re-run build
+RUN make
+
+# expose built image files in standalone root folder
+FROM scratch AS localout
+COPY --from=local /root/buildroot/output/images/ .
