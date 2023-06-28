@@ -1,0 +1,19 @@
+--- a/drivers/staging/fbtft/fb_st7789v.c
++++ b/drivers/staging/fbtft/fb_st7789v.c
+@@ -163,6 +163,7 @@ static int set_var(struct fbtft_par *par)
+ 		break;
+ 	case 90:
+ 		madctl_par |= (MADCTL_MV | MADCTL_MY);
++		printk(KERN_INFO "st7789: 90deg\n");
+ 		break;
+ 	case 180:
+ 		madctl_par |= (MADCTL_MX | MADCTL_MY);
+@@ -174,6 +175,8 @@ static int set_var(struct fbtft_par *par)
+ 		return -EINVAL;
+ 	}
+ 	write_reg(par, MIPI_DCS_SET_ADDRESS_MODE, madctl_par);
++	write_reg(par, MIPI_DCS_SET_SCROLL_START, 0x00, 0x50);
++	printk(KERN_INFO "st7789: MADCTL: %02x\n", madctl_par);
+ 	return 0;
+ }
+ 
