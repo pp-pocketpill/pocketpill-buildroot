@@ -16,6 +16,7 @@
 	aliases {
 		serial0 = &uart0;
 		spi0 = &spi0;
+		spi1 = &spi1;
 	};
 
 	chosen {
@@ -103,7 +104,46 @@
 
 };
 
+&pio {
+	spi1_pins_pe: spi1-pins-pe {
+		pins = "PE9", "PE7", "PE10", "PE8"; /* (PE10/MISO not used and wired to bat_alert) */
+		function = "spi1";
+	};
+};
 
+&spi1 {
+	#address-cells = <1>;
+	#size-cells = <0>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&spi1_pins_pe>;
+	status = "okay";
+	bias-pull-down;
+
+	st7789v@0 {
+		compatible = "sitronix,st7789v";
+		reg = <0>;
+		power-supply = <&reg_vcc3v3>;
+
+		reset-gpios = <&pio 4 5 GPIO_ACTIVE_LOW>;
+		dc-gpios = <&pio 4 4 GPIO_ACTIVE_LOW>;
+
+		fps = <30>;
+		buswidth = <8>;
+
+		width = <240>;
+		height = <240>;
+		
+		spi-max-frequency = <32000000>;
+		spi-cpol;
+		spi-cpha;
+
+		rgb;
+		rotate = <90>;
+
+		debug = <1>;
+
+	};
+};
 
 &tcon0 {
 	status = "disabled";
