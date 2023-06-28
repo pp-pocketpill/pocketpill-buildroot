@@ -36,5 +36,5 @@ docker build -f Dockerfile.dev --output type=tar,dest=- . | tar x -C dist
 Here is how the base image is generated (these commands are just for the repo maintainer):
 
 ```sh
-docker build -f Dockerfile --target main -t olel/pocketpill-buildroot:latest
+docker build -f Dockerfile --target main -t olel/pocketpill-buildroot:latest .
 ```
