@@ -73,6 +73,7 @@ COPY --from=sdk /root/buildroot/output/images/arm-buildroot-linux-gnueabi_sdk-bu
 WORKDIR /root/pocketpill
 COPY board/ board/
 COPY configs/ configs/
+COPY patches/ patches/
 COPY \
     Config.in \
     external.desc \
