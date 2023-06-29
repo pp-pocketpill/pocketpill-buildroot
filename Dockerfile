@@ -74,6 +74,7 @@ WORKDIR /root/pocketpill
 COPY board/ board/
 COPY configs/ configs/
 COPY patches/ patches/
+COPY package/ package/
 COPY \
     Config.in \
     external.desc \
