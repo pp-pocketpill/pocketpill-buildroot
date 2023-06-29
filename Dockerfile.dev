@@ -24,8 +24,8 @@ RUN cd output/build/linux-custom/ && rm .stamp_built .stamp_*_installed
 RUN cd output/build/linux-firmware-20221214/ && rm .stamp_built .stamp_*_installed
 
 # rebuild kernel
-RUN make linux-dirclean
-RUN make linux-rebuild
+# RUN make linux-dirclean
+# RUN make linux-rebuild
 
 # re-run build
 RUN make
