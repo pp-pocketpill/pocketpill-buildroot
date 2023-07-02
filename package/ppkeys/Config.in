@@ -1,0 +1,5 @@
+config BR2_PACKAGE_PPKEYS
+	bool "ppkeys"
+	depends on BR2_LINUX_KERNEL
+	help
+		ppkeys
