@@ -4,13 +4,13 @@
 #
 ################################################################################
 
-GNUBOY_VERSION = v1.0.4
+GNUBOY_VERSION = c367bb4ba96fb07cd62f72f5ecb43aeff7012564
 GNUBOY_SITE_METHOD = git
-GNUBOY_SITE = https://github.com/rofl0r/gnuboy
+GNUBOY_SITE = https://github.com/pp-pocketpill/gnuboy
 GNUBOY_LICENSE = GPL-2.0
 GNUBOY_LICENSE_FILES = COPYING
 
-GNUBOY_DEPENDENCIES = sdl2 sdl2_image sdl2_mixer sdl2_ttf zlib
+GNUBOY_DEPENDENCIES = sdl sdl_image sdl_mixer sdl_ttf zlib
 
 GNUBOY_CFLAGS = $(TARGET_CFLAGS) $(subst $\",,$(BR2_TARGET_OPTIMIZATION)) -ffast-math -funsafe-math-optimizations
 
@@ -21,8 +21,9 @@ GNUBOY_CONF_OPTS += --prefix=$(TARGET_DIR)/usr/local --bindir=$(TARGET_DIR)/usr/
 GNUBOY_CONF_OPTS += --without-fb \
 		    --without-svgalib \
 		    --without-x \
-		    --with-sdl2
+		    --without-sdl2 \
+			--with-sdl
 
-GNUBOY_CONF_ENV += SDL_CONFIG="$(STAGING_DIR)/usr/bin/sdl2-config"
+GNUBOY_CONF_ENV += SDL_CONFIG="$(STAGING_DIR)/usr/bin/sdl-config"
 
 $(eval $(autotools-package))
