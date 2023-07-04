@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="pp_black.png"
+   inkscape:export-xdpi="60.959999"
+   inkscape:export-ydpi="60.959999"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.1893044"
+     inkscape:cx="376.27036"
+     inkscape:cy="151.34897"
+     inkscape:window-width="1838"
+     inkscape:window-height="836"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;fill-opacity:1;stroke-width:0.137047;stroke-linecap:round;stop-color:#000000"
+       id="rect236"
+       width="100"
+       height="100"
+       x="0"
+       y="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:20.3143px;font-family:'STIX Two Text';-inkscape-font-specification:'STIX Two Text, Normal';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke-width:0.0814023;stroke-linecap:round;stop-color:#000000"
+       x="85.564903"
+       y="26.740982"
+       id="text1522"><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'WLM Idea';-inkscape-font-specification:'WLM Idea, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke-width:0.0814023"
+         x="85.564903"
+         y="26.740982"
+         id="tspan1578"
+         dy="7.3180695">pocket</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'WLM Idea';-inkscape-font-specification:'WLM Idea, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:end;writing-mode:lr-tb;direction:ltr;baseline-shift:baseline;text-anchor:end;fill:#ffffff;fill-opacity:1;stroke-width:0.0814023"
+         x="85.564903"
+         y="52.153175"
+         id="tspan1742">pill</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:1.10375;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;stop-color:#000000"
+       d="M 3.9952736,71.066488 C 6.6471562,17.015408 -7.5266435,9.3287156 95.982758,12.874577 v 0 M 3.9952736,71.066488 C 27.583998,60.472826 61.150993,60.888267 79.884444,60.472826 97.277198,60.087118 95.982758,12.874575 95.982758,12.874575 v 2e-6"
+       id="path1912"
+       sodipodi:nodetypes="ccccssc" />
+  </g>
+</svg>

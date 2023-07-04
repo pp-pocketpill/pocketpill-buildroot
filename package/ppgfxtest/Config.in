@@ -1,0 +1,11 @@
+config BR2_PACKAGE_PPGFXTEST
+	bool "ppgfxtest"
+	default y
+    select BR2_PACKAGE_SDL2_DIRECTFB
+	select BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_SDL2_IMAGE
+	select BR2_PACKAGE_SDL2_TTF
+    select BR2_PACKAGE_SDL2_GFX
+	select BR2_PACKAGE_LIBGLIB2
+	help
+        SDL + directfb test tool

@@ -1,0 +1,16 @@
+unbindall
+
+bind esc quit
+bind up +up
+bind down +down
+bind left +left
+bind right +right
+bind a +a
+bind b +b
+bind enter +start
+bind space +select
+
+set dmg_bgp  0x98d0e0 0x68a0b0 0x60707C 0x2C3C3C
+set dmg_wndp 0x98d0e0 0x68a0b0 0x60707C 0x2C3C3C
+set dmg_obp0 0x98d0e0 0x68a0b0 0x60707C 0x2C3C3C
+set dmg_obp1 0x98d0e0 0x68a0b0 0x60707C 0x2C3C3C

@@ -1,1 +1,5 @@
+source "$BR2_EXTERNAL_POCKETPILL_PATH/package/ppgfxtest/Config.in"
 source "$BR2_EXTERNAL_POCKETPILL_PATH/package/ppkeys/Config.in"
+
+source "$BR2_EXTERNAL_POCKETPILL_PATH/package/retrofe/Config.in"
+source "$BR2_EXTERNAL_POCKETPILL_PATH/package/gnuboy/Config.in"

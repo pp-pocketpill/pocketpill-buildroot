@@ -1,0 +1,16 @@
+services:
+  buildroot:
+    image: olel/pocketpill-buildroot-dev
+    volumes:
+      - ./board:/root/pocketpill/board
+      - ./configs:/root/pocketpill/configs
+      - ./patches:/root/pocketpill/patches
+      - ./package:/root/pocketpill/package
+      - ./Config.in:/root/pocketpill/Config.in
+      - ./external.desc:/root/pocketpill/external.desc
+      - ./external.mk:/root/pocketpill/external.mk
+      - ./buildscript.sh:/root/buildroot/buildscript.sh
+    container_name:
+      pp-buildroot
+    ports:
+      - "8080:8088"

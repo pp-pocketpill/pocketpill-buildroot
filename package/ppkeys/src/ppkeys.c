@@ -22,6 +22,8 @@
 #define KEYCODE_UP 103
 #define KEYCODE_DOWN 108
 
+#define KEYCODE_ESC 1
+
 struct key_fields {
     unsigned int _: 6;
     unsigned int start: 1;
@@ -47,10 +49,11 @@ typedef union pressed_keys {
 
 int main(int argc, char **argv) {
 	struct input_event ev;
+    struct input_event ev_out;
     
     fd_set rfds;
     struct timeval tv;
-	int fd = open("/dev/input/event0", O_RDONLY);
+	int fd = open("/dev/input/event0", O_RDWR);
     if (fd == -1) {
         perror("Failed to open input device");
         return 1;
@@ -104,6 +107,10 @@ int main(int argc, char **argv) {
         if (keyDown(keys.pressed.start && keys.pressed.select, prevKeys.pressed.start && prevKeys.pressed.select)) {
             printf("Start + Select down @ %ld\n", now);
             startSelectDown = now;
+            ev_out.code = KEYCODE_ESC;
+            ev_out.type = EV_KEY;
+            ev_out.value = 1; 
+            write(fd, &ev_out, sizeof(ev_out));
         }
         if (keyHold(keys.pressed.start && keys.pressed.select, prevKeys.pressed.start && prevKeys.pressed.select)) {
             printf("Start + Select hold @ %ld\n", now);
@@ -113,6 +120,10 @@ int main(int argc, char **argv) {
         }
         if (keyUp(keys.pressed.start && keys.pressed.select, prevKeys.pressed.start && prevKeys.pressed.select)) {
             printf("Start + Select up @ %ld\n", now);
+            ev_out.code = KEYCODE_ESC;
+            ev_out.type = EV_KEY;
+            ev_out.value = 1;
+            write(fd, &ev_out, sizeof(ev_out));
         }
 
         usleep(10000);
