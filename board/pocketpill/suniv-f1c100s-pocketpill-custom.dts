@@ -99,6 +99,12 @@
 			linux,code = <103>; /* Up */
 			gpio-key;
 		};
+		key_dummy {
+			label = "GPIO Dummy Key";
+			gpios = <&pio 3 11 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+			linux,code = <1>; /* ESC */
+			gpio-key;
+		};
 
 	};
 

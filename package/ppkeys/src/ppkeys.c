@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
             ev_out.code = KEYCODE_ESC;
             ev_out.type = EV_KEY;
             ev_out.value = 1; 
-            write(fd, &ev_out, sizeof(ev_out));
+            write(fd, &ev_out, sizeof(struct input_event));
         }
         if (keyHold(keys.pressed.start && keys.pressed.select, prevKeys.pressed.start && prevKeys.pressed.select)) {
             printf("Start + Select hold @ %ld\n", now);
@@ -122,8 +122,8 @@ int main(int argc, char **argv) {
             printf("Start + Select up @ %ld\n", now);
             ev_out.code = KEYCODE_ESC;
             ev_out.type = EV_KEY;
-            ev_out.value = 1;
-            write(fd, &ev_out, sizeof(ev_out));
+            ev_out.value = 0;
+            write(fd, &ev_out, sizeof(struct input_event));
         }
 
         usleep(10000);
