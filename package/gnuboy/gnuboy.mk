@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-GNUBOY_VERSION = c367bb4ba96fb07cd62f72f5ecb43aeff7012564
+GNUBOY_VERSION = pocketpill
 GNUBOY_SITE_METHOD = git
 GNUBOY_SITE = https://github.com/pp-pocketpill/gnuboy
 GNUBOY_LICENSE = GPL-2.0
