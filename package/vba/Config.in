@@ -1,0 +1,15 @@
+config BR2_PACKAGE_VBA
+	bool "visualboyadvance-m GBA Emulator"
+	default y
+    select BR2_PACKAGE_SDL2_DIRECTFB
+	select BR2_PACKAGE_SDL2_FBCON
+	select BR2_PACKAGE_SDL2
+	select BR2_PACKAGE_SDL2_IMAGE
+	select BR2_PACKAGE_SDL2_MIXER
+	select BR2_PACKAGE_SDL2_TTF
+    select BR2_PACKAGE_SDL2_GFX
+	select BR2_PACKAGE_ZLIB
+	help
+        Visual Boy Advance GBA Emulator
+
+        https://github.com/visualboyadvance-m/visualboyadvance-m
