@@ -133,13 +133,13 @@
 		reset-gpios = <&pio 4 5 GPIO_ACTIVE_LOW>;
 		dc-gpios = <&pio 4 4 GPIO_ACTIVE_LOW>;
 
-		fps = <30>;
+		fps = <60>;
 		buswidth = <8>;
 
 		width = <240>;
 		height = <240>;
 		
-		spi-max-frequency = <32000000>;
+		spi-max-frequency = <96000000>;
 		spi-cpol;
 		spi-cpha;
 
