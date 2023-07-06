@@ -14,7 +14,7 @@ VBA_CONF_OPTS += -DENABLE_SDL=YES -DENABLE_OPENGL=NO -DENABLE_LINK=NO -DENABLE_W
 
 define VBA_INSTALL_TARGET_CMDS
 	$(INSTALL) -d -m 0755 $(TARGET_DIR)/usr/games
-	$(INSTALL) -m 0755 $(@D)/visualboyadvance-m/build/vbam $(TARGET_DIR)/usr/games/vbam
+	$(INSTALL) -m 0755 $(@D)/buildroot-build/vbam $(TARGET_DIR)/usr/games/vbam
 endef
 
 TARGET_CFLAGS += -O3 -lgomp
