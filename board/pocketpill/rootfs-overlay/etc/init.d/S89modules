@@ -1,3 +1,4 @@
 #! /bin/sh
 
 modprobe g_acm_ms
+modprobe spi_sun6i

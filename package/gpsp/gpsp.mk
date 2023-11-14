@@ -4,9 +4,8 @@
 #
 ################################################################################
 
-GPSP_VERSION = gpsp-FunKey-1.2.2
-GPSP_SITE_METHOD = git
-GPSP_SITE = https://github.com/FunKey-Project/gpsp.git
+GPSP_SITE_METHOD = local
+GPSP_SITE = $(GPSP_PKGDIR)gpsp
 GPSP_LICENSE = GPL-2.0
 GPSP_LICENSE_FILES = COPYING.DOC
 

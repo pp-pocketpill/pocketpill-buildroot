@@ -1,2 +1,2 @@
 #! /bin/sh
-sync && gpioset gpiochip0 106=0 # Turn off powersupply enable signal
+sync && poweroff -f # Turn off powersupply enable signal

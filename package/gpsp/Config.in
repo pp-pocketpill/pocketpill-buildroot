@@ -8,6 +8,7 @@ config BR2_PACKAGE_GPSP
 	select BR2_PACKAGE_SDL_MIXER
 	select BR2_PACKAGE_SDL_TTF
 	select BR2_PACKAGE_ZLIB
+	select BR2_PACKAGE_INIH
 	help
 	  Gameboy Advance emulator for Playstation Portable
 
