@@ -4,7 +4,7 @@
 
 ARG BASE_VERSION=latest
 
-FROM olel/pocketpill-buildroot:$BASE_VERSION AS local
+FROM olel/pp-buildroot-base:latest AS local
 
 # copy newest version of local files
 WORKDIR /root/pocketpill
