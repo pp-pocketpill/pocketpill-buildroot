@@ -2,8 +2,7 @@
 # image from scratch; ensure to clean the right stamps/folders to correctly
 # trigger rebuild with Buildroot
 
-ARG BASE_VERSION=latest
-
+FROM ubuntu:18.04 AS base
 FROM olel/pp-buildroot-base:latest AS local
 
 # copy newest version of local files
