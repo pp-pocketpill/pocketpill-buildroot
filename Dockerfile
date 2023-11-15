@@ -95,11 +95,6 @@ RUN make uboot-source
 # run the main build command
 RUN make
 
-# expose built image files in standalone root folder
-FROM scratch AS dist
-COPY --from=main /root/buildroot/output/images/ .
-
-# Hosting buildroot directory with http server to keep the container running
-# only used for dev purposes with docker-compose (see docker-compose.yaml)
+# keep container running if required
 WORKDIR /root/buildroot
-CMD ["python3", "-m", "http.server", "8088"]
+CMD ['tail', '-f', '/dev/null']
