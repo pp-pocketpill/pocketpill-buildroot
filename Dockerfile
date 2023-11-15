@@ -97,4 +97,4 @@ RUN make
 
 # keep container running if required
 WORKDIR /root/buildroot
-CMD tail -f /dev/null
+CMD ['tail', '-f', '/dev/null']
