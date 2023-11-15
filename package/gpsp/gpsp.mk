@@ -4,8 +4,9 @@
 #
 ################################################################################
 
-GPSP_SITE_METHOD = local
-GPSP_SITE = $(GPSP_PKGDIR)gpsp
+GPSP_VERSION = pocketpill
+GPSP_SITE_METHOD = git
+GPSP_SITE = https://github.com/pp-pocketpill/gpsp
 GPSP_LICENSE = GPL-2.0
 GPSP_LICENSE_FILES = COPYING.DOC
 
