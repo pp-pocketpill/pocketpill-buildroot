@@ -6,7 +6,7 @@
 
 RETROFE_VERSION = pocketpill-compat
 RETROFE_SITE_METHOD = git
-RETROFE_SITE = https://github.com/olell/RetroFE
+RETROFE_SITE = https://github.com/pp-pocketpill/RetroFE
 RETROFE_DEPENDENCIES = gstreamer1 gst1-plugins-base sdl2 sdl2_image sdl2_mixer sdl2_ttf sdl2_gfx libglib2 sqlite zlib
 RETROFE_LICENSE = GPL-3.0
 RETROFE_LICENSE_FILES = LICENSE.txt
