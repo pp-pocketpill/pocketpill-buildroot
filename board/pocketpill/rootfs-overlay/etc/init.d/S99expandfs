@@ -1,21 +1,33 @@
 #! /bin/sh
 
-# check if filesystem was expanded once
+if [ ! -f /etc/part_was_expanded ]
+then
+    touch /etc/part_was_expanded
+
+    fdisk /dev/mmcblk0 <<EOF
+d
+4
+n
+p
+804864
+
+t
+4
+c
+w
+EOF
+
+    sync
+    poweroff -f
+
+fi
+
 if [ ! -f /etc/fs_was_expanded ]
 then
-    sleep 10s; # wait until fully booted
-
-    # unmount
-    umount /data || true
-
-    # delte partition 4, recreate until end of disk, change type to fat32
-    (echo -e "d\n4\nn\np\n804864\n\nt\n4\nc\nw\n" | fdisk /dev/mmcblk0) && mkdosfs /dev/mmcblk0p4
-
-    # mount
-    mount /dev/mmcblk0p4 /data || true
-
-    # create /etc/fs_was_expanded
     touch /etc/fs_was_expanded
+    
+    mkdosfs -v /dev/mmcblk0p4
+
 
     # poweroff
     sync
