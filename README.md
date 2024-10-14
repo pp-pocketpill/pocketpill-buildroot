@@ -9,7 +9,7 @@ run the pocketpill.
 - [x] Boot from SD
 - [x] USB-Gadget Serial
 - [x] Keys as input device
-- [ ] Display support
+- [x] Display support
 
 ## Building the Image
 
